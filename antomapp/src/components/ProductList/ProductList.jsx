@@ -9,4 +9,4 @@ const ProductList = () => {
     )
 }
 
-export default Form;
+export default ProductList;
