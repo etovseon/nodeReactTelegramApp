@@ -11,7 +11,7 @@ function App() {
   //},[])
   const onClose = () => {
   tg.close();
-}
+  }
   return (
     <div className="App">
       ya work
