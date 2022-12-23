@@ -10,10 +10,10 @@ import Form from './components/Form/Form';
 
 function App() {
 
-    const {onTogleButton,tg} = useTelegram();
-    useEffect(() => {
-      tg.ready();
-    },[])
+  const {onTogleButton,tg} = useTelegram();
+  useEffect(() => {
+    tg.ready();
+  },[])
 
   
   return (
