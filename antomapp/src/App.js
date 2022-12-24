@@ -3,10 +3,9 @@ import { useEffect } from 'react';
 import { useTelegram } from './components/hooks/useTelegram';
 import Header from './components/Header/Header';
 import {Route, Routes} from 'react-router-dom';
-import ProductList from './components/ProductList/ProductList';
+import ProductList from './ProductList/ProductList';
+import ProductList2 from './ProductList2/ProductList';
 import Form from './components/Form/Form';
-
-
 
 function App() {
 
@@ -21,9 +20,7 @@ function App() {
       <Header/>
         <Routes>
           <Route path='/' element={<ProductList/>}/>
-          <Route path='/form' element={<Form/>}/>
-
-        
+          <Route path='/form' element={<ProductList2/>}/>
         </Routes>
     </div>
   );
