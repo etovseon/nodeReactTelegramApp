@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <Header/>
         <Routes>
-
+          <Route index element={<ProductList/>}/>
           <Route index element={<Form/>}/>
 
         
