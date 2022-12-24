@@ -35,7 +35,8 @@ const Form = () => {
     }
     return (
         <div>
-            <div className={'form'}>
+            <h1>asd</h1>
+            {/* <div className={'form'}>
                 <h3>Введите ваши данные</h3>
                 <input className={'input'} type="text" placeholder={'Страна'} value={country} onChange={onChangeCountry}></input>
                 <input className={'input'} type="text" placeholder={'Улица'} value={street} onChange={onChangeStreet}></input>
@@ -44,7 +45,7 @@ const Form = () => {
                 <option value={'legal'} >Юр.лицо</option>
                 <option value={'physical'}>Физ.лицо</option>
             </select>
-            </div>
+            </div> */}
         </div>
     )
 }
