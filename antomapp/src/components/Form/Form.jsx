@@ -9,7 +9,7 @@ const Form = () => {
     const [subject,setSubject] = useState('physical');
     const {tg} = useTelegram();
 
-     useEffect(() => {
+    useEffect(() => {
         tg.MainButton.setParams({
             text: 'Отправить данные'
         })
@@ -34,7 +34,7 @@ const Form = () => {
     }
     return (
         <div>
-            <div className={"form"}>
+            <div className={'form'}>
                 <h3>Введите ваши данные</h3>
                 <input className={'input'} type="text" placeholder={'Страна'} value={country} onChange={onChangeCountry}></input>
                 <input className={'input'} type="text" placeholder={'Улица'} value={street} onChange={onChangeStreet}></input>
