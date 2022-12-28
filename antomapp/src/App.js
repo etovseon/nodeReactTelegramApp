@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Header />}>
           <Route index element={<ProductList />} />
-          <Route path="/form" element={<Form />} />
+          <Route path="form" element={<Form />} />
         </Route>
       </Routes>
      </BrowserRouter>
