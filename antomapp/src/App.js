@@ -4,9 +4,8 @@ import { useTelegram } from './components/hooks/useTelegram';
 import Header from './components/Header/Header';
 import {Route, Routes} from 'react-router-dom';
 import ProductList from './ProductList/ProductList';
-import ProductList2 from './ProductList2/ProductList';
 import Form from './components/Form/Form';
-
+import {BrowserRouter as Router} from 'react-router-dom';
 function App() {
 
   const {onTogleButton,tg} = useTelegram();
@@ -18,10 +17,10 @@ function App() {
   return (
     <div className="App">
       <Header/>
-        <Routes>
-          <Route path='/' element={<ProductList/>}/>
-          <Route path='/form' element={<ProductList2/>}/>
-        </Routes>
+      <Routes>
+        <Route index element={<ProductList/>}/>
+        <Route path="form" element={<Form/>}/>
+      </Routes>
     </div>
   );
 }
