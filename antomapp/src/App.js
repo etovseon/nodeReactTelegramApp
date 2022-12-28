@@ -12,7 +12,9 @@ function App() {
   useEffect(() => {
     tg.ready();
   },[])
-
+  console.log(Route.path)
+  console.log(path)
+  console.log(Routes.path)
   
   return (
     <div className="App">
