@@ -15,13 +15,16 @@ function App() {
 
   
   return (
-    <div className="App">
-      <Header/>
-      <Routes>
-        <Route index element={<Form/>}/>
-        <Route path='form' element={<ProductList/>}/>
-      </Routes>
-    </div>
+    <BrowserRouter>
+    <Header />
+    
+     <Routes>
+         <Route path="/" element={<ProductList/>} />
+         <Route path="/form" element={<Form/>} />
+     </Routes>
+    </BrowserRouter>
+   
+
   );
 }
 
