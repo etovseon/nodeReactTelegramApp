@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useTelegram } from "../hooks/useTelegram";
 import './Form.css'
 import { useState } from "react";
-const tg = window.Telegram.WebApp;
+
 const Form = () => {
     const [country, setCountry] = useState('');
     const [street,setStreet] = useState('');
@@ -18,13 +18,18 @@ const Form = () => {
         }
         tg.sendData(JSON.stringify(data));
     },[])
-
     useEffect (() => {
-        tg.onEvent('mainButtonClicked', onSendData)
+        tg.MainButton.onEvent(onSendData)
         return () => {
-            tg.offEvent('mainButtonClicked', onSendData)
+            tg.MainButton.offEvent(onSendData)
         }
     }, [])
+    // useEffect (() => {
+    //     tg.onEvent('mainButtonClicked', onSendData)
+    //     return () => {
+    //         tg.offEvent('mainButtonClicked', onSendData)
+    //     }
+    // }, [])
     useEffect(() => {
         tg.MainButton.setParams({
             text: 'Отправить данные'
