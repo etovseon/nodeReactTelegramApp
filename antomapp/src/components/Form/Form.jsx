@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useTelegram } from "../hooks/useTelegram";
 import './Form.css'
 import { useState } from "react";
-
+const tg = window.Telegram.WebApp;
 const Form = () => {
     const [country, setCountry] = useState('');
     const [street,setStreet] = useState('');
