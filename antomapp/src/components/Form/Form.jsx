@@ -19,10 +19,11 @@ const Form = () => {
         }
         tg.sendData(JSON.stringify(data));
     },[])
+
     useEffect (() => {
-        tg.onEvent('mainButtonClicked', onSendData)
+        tg.MainButton.onEvent('mainButtonClicked', onSendData)
         return () => {
-            tg.offEvent('mainButtonClicked', onSendData)
+            tg.MainButton.offEvent('mainButtonClicked', onSendData)
         }
     }, [])
     useEffect(() => {
