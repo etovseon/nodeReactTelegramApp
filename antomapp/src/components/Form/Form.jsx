@@ -8,7 +8,7 @@ const Form = () => {
     const [street,setStreet] = useState('');
     const [subject,setSubject] = useState('physical');
     const {tg} = useTelegram();
-
+    console.log(onSendData)
     const onSendData = useCallback(()=> {
         const data = {
             country,
