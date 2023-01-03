@@ -30,13 +30,17 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
-        fetch('http://188.247.115.178:30020/web-data', {
+        const response = fetch('http://188.247.115.178:30020/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)
         })
+        if(!response.ok){
+            throw new Error('Ответ сети был не ok.');
+            }
+
         console.log('data:'+data)
     }, [addedItems])
     console.log(addedItems)
