@@ -20,28 +20,53 @@ const getTotalPrice = (items = []) => {
     }, 0)
 }
 
-const ProductList = () => {
-    const [addedItems, setAddedItems] = useState([]);
-    const {tg, queryId} = useTelegram();
 
-    const onSendData = useCallback(() => {
-        const data = {
-            products: addedItems,
-            totalPrice: getTotalPrice(addedItems),
-            queryId,
-        }
-        const response = fetch('http://188.247.115.178:30020/web-data', {
+const token = '5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I';
+
+
+const webAppUrl = 'https://ornate-selkie-c27577.netlify.app';
+
+function myf() {
+
+    const data = {
+        "id": "4",
+        "title": "Куртка 8",
+        "price": 122,
+        "description": "Зеленого цвета, теплая"
+    }
+        const res = fetch("https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text="+JSON.stringify(data))
+        const res2 = fetch('http://188.247.115.178:30020/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)
         })
-        if(!response.ok){
-            throw new Error('Ответ сети был не ok.');
-            }
+    return res;
+}
 
-        console.log('data:'+data)
+const retres = myf();
+
+
+const ProductList = () => {
+    const [addedItems, setAddedItems] = useState([]);
+    const {tg, queryId} = useTelegram();
+
+    const onSendData = useCallback(() => {
+        const res = fetch("https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text="+JSON.stringify(data))
+        res.then(console.log)
+        const data = {
+            products: addedItems,
+            totalPrice: getTotalPrice(addedItems),
+            queryId,
+        }
+        fetch('http://188.247.115.178:30020/web-data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
     }, [addedItems])
     console.log(addedItems)
     
