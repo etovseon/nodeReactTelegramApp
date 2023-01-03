@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
 import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import { useTelegram } from '../components/hooks/useTelegram';
-import {useCallback, useEffect} from "react";
+import React, {useCallback, useEffect, useState} from 'react';
 
 const products = [
     {id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые'},
@@ -39,7 +38,7 @@ const ProductList = () => {
             body: JSON.stringify(data)
         })
     }, [addedItems])
-
+    console.log(addedItems)
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
         return () => {
