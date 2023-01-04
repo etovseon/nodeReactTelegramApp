@@ -20,76 +20,17 @@ const getTotalPrice = (items = []) => {
     }, 0)
 }
 
-
-const token = '5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I';
-
-
-const webAppUrl = 'https://ornate-selkie-c27577.netlify.app';
-
-function myf() {
-
-    const data = {
-        "id": "4",
-        "title": "Куртка 8",
-        "price": 122,
-        "description": "Зеленого цвета, теплая"
-    }
-        const res = fetch("https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text="+JSON.stringify(data))
-        const res2 = fetch('http://188.247.115.178:30020/web-data', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
-    return res;
-}
-const data2 = {
-    "id": "1",
-    "title": "Куртка 8",
-    "price": 12222,
-    "description": "Зеленого цвета, теплая"
-}
-// const retres = myf();
-function myf2() {
-const data2 = {
-    "id": "1",
-    "title": "Куртка 8",
-    "price": 12222,
-    "description": "Зеленого цвета, теплая"
-}
-const res = fetch("https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text=Bot%20reloaded!")
-const test1 = fetch('http://188.247.115.178:30020/web-data', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data2)
-})
-
-}
-const test_push = myf2()
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId} = useTelegram();
-    const send_url = fetch("https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text="+JSON.stringify(data2))
 
     const onSendData = useCallback(() => {
-        // res.then(console.log)
         const data = {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
-
-        // const data2 = {
-        //     "id": "1",
-        //     "title": "Куртка 8",
-        //     "price": 12222,
-        //     "description": "Зеленого цвета, теплая"
-        // }
-
-        fetch('http://188.247.115.178:30020/web-data', {
+        fetch('http://85.119.146.179:8000/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -97,8 +38,7 @@ const ProductList = () => {
             body: JSON.stringify(data)
         })
     }, [addedItems])
-    console.log(addedItems)
-    
+
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
         return () => {
