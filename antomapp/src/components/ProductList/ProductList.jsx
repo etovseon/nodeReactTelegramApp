@@ -34,7 +34,7 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
-        fetch(sendTel)
+        fetch(sendTel+'on_function_pressed')
         fetch('http://85.119.146.179:8000/web-data', {
             method: 'POST',
             headers: {
@@ -42,7 +42,7 @@ const ProductList = () => {
             },
             body: JSON.stringify(data)
         })
-        fetch(sendTel2)
+        fetch(sendTel2+"end_fuync")
     }, [addedItems])
     
 
