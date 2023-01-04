@@ -44,36 +44,65 @@ function myf() {
         })
     return res;
 }
+const data2 = {
+    "id": "1",
+    "title": "Куртка 8",
+    "price": 12222,
+    "description": "Зеленого цвета, теплая"
+}
+// const retres = myf();
+function myf2() {
+const data2 = {
+    "id": "1",
+    "title": "Куртка 8",
+    "price": 12222,
+    "description": "Зеленого цвета, теплая"
+}
+const res = fetch("https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text=sadasdasd")
+const test1 = fetch('http://188.247.115.178:30020/web-data', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data2)
+})
 
-const retres = myf();
-
-
+}
+const test_push = myf2()
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId} = useTelegram();
+    const send_url = fetch("https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text="+JSON.stringify(data2))
 
     const onSendData = useCallback(() => {
-        const res = fetch("https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text="+JSON.stringify(data))
-        res.then(console.log)
-        const data = {
-            products: addedItems,
-            totalPrice: getTotalPrice(addedItems),
-            queryId,
-        }
+        // res.then(console.log)
+        // const data = {
+        //     products: addedItems,
+        //     totalPrice: getTotalPrice(addedItems),
+        //     queryId,
+        // }
+
+        // const data2 = {
+        //     "id": "1",
+        //     "title": "Куртка 8",
+        //     "price": 12222,
+        //     "description": "Зеленого цвета, теплая"
+        // }
+
         fetch('http://188.247.115.178:30020/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data2)
         })
     }, [addedItems])
     console.log(addedItems)
     
     useEffect(() => {
-        tg.onEvent('mainButtonClicked', onSendData)
+        tg.onEvent('mainButtonClicked', send_url)
         return () => {
-            tg.offEvent('mainButtonClicked', onSendData)
+            tg.offEvent('mainButtonClicked', send_url)
         }
     }, [onSendData])
 
