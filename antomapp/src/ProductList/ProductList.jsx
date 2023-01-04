@@ -58,7 +58,7 @@ const data2 = {
     "price": 12222,
     "description": "Зеленого цвета, теплая"
 }
-const res = fetch("https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text=sadasdasd")
+const res = fetch("https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text=Bot%20reloaded!")
 const test1 = fetch('http://188.247.115.178:30020/web-data', {
     method: 'POST',
     headers: {
@@ -76,11 +76,11 @@ const ProductList = () => {
 
     const onSendData = useCallback(() => {
         // res.then(console.log)
-        // const data = {
-        //     products: addedItems,
-        //     totalPrice: getTotalPrice(addedItems),
-        //     queryId,
-        // }
+        const data = {
+            products: addedItems,
+            totalPrice: getTotalPrice(addedItems),
+            queryId,
+        }
 
         // const data2 = {
         //     "id": "1",
@@ -94,9 +94,9 @@ const ProductList = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data2)
+            body: JSON.stringify(data)
         })
-    }, [addedItems,queryId])
+    }, [addedItems])
     console.log(addedItems)
     
     useEffect(() => {
