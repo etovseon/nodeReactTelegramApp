@@ -2,7 +2,7 @@ import './App.css';
 import { useEffect } from 'react';
 import Header from './components/Header/Header';
 import {Route, Routes} from 'react-router-dom';
-import ProductList from './ProductList/ProductList';
+import ProductList from './components/ProductList/ProductList';
 import Form from './components/Form/Form';
 import { useTelegram } from './components/hooks/useTelegram';
 
