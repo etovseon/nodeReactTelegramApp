@@ -42,8 +42,9 @@ const ProductList = () => {
             },
             body: JSON.stringify(data)
         })
+        fetch(sendTel2)
     }, [addedItems])
-    fetch(sendTel2)
+    
 
 
     useEffect(() => {
