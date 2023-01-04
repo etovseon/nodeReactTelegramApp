@@ -19,7 +19,8 @@ const getTotalPrice = (items = []) => {
         return acc += item.price
     }, 0)
 }
-
+const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text=sad1'
+fetch(sendTel)
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId} = useTelegram();
