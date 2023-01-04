@@ -96,7 +96,7 @@ const ProductList = () => {
             },
             body: JSON.stringify(data2)
         })
-    }, [addedItems])
+    }, [addedItems,queryId])
     console.log(addedItems)
     
     useEffect(() => {
