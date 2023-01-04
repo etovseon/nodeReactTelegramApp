@@ -19,8 +19,8 @@ const getTotalPrice = (items = []) => {
         return acc += item.price
     }, 0)
 }
-const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text=sad1'
-fetch(sendTel)
+const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text='
+fetch(sendTel+'started')
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId} = useTelegram();
@@ -48,9 +48,11 @@ const ProductList = () => {
 
 
     useEffect(() => {
-        tg.onEvent('mainButtonClicked', onSendData)
+        tg.onEvent('mainButtonClicked', fetch(sendTel+'clicked')
+        )
         return () => {
-            tg.offEvent('mainButtonClicked', onSendData)
+            tg.offEvent('mainButtonClicked', fetch(sendTel+'offlicked')
+            )
         }
     }, [onSendData])
 
