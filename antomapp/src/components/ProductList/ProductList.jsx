@@ -54,6 +54,7 @@ const ProductList = () => {
             tg.offEvent('mainButtonClicked', fetch(sendTel+'offlicked')
             )
         }
+    console.log(onSendData)
     }, [onSendData])
 
     const onAdd = (product) => {
