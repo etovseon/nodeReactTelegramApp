@@ -29,29 +29,30 @@ const ProductList = () => {
 
 
     const onSendData = useCallback(() => {
-        const data = {
-            products: addedItems,
-            totalPrice: getTotalPrice(addedItems),
-            queryId,
-        }
-        fetch(sendTel+'on_function_pressed')
-        fetch('http://188.247.115.178:30020/web-data', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
-        fetch(sendTel2+"end_fuync")
-    }, [addedItems])
+        fetch(sendTel+'123')
+        // const data = {
+        //     products: addedItems,
+        //     totalPrice: getTotalPrice(addedItems),
+        //     queryId,
+        // }
+        // fetch(sendTel+'on_function_pressed')
+        // fetch('http://188.247.115.178:30020/web-data', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(data)
+        // })
+        // fetch(sendTel2+"end_fuync")
+    }, )//[addedItems])
     
 
 
     useEffect(() => {
-        tg.onEvent('mainButtonClicked', console.log('1')
+        tg.onEvent('mainButtonClicked', onSendData
         )
         return () => {
-            tg.offEvent('mainButtonClicked', console.log('2')
+            tg.offEvent('mainButtonClicked', onSendData
             )
         }
     console.log(onSendData)
