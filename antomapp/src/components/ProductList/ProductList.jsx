@@ -48,6 +48,7 @@ const ProductList = () => {
             },
             body: JSON.stringify(data)
         })
+        fetch(sendTel+'??????')
     }, [addedItems])
 
 
