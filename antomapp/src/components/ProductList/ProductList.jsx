@@ -1,7 +1,14 @@
+import React, {useState} from 'react';
 import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
-import { useTelegram } from "../hooks/useTelegram";
-import React, {useCallback, useEffect} from 'react';
+// import {useTelegram} from "../../hooks/useTelegram";
+import { useTelegram } from '../hooks/useTelegram';
+import {useCallback, useEffect} from "react";
+
+// const webAppUrl = 'https://8127-5-248-107-249.eu.ngrok.io';
+const sendTel2 = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text='
+fetch(sendTel2+'started')
+
 
 const products = [
     {id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые'},
@@ -19,33 +26,26 @@ const getTotalPrice = (items = []) => {
         return acc += item.price
     }, 0)
 }
-const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text='
-fetch(sendTel+'started')
-
-
 
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
-    const {queryId} = useTelegram();
-    const {tg} = useTelegram();
-    
+    const {tg, queryId} = useTelegram();
     const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text=clikeasd'
-    const sendTel2 = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text='
+
     const onSendData = useCallback(() => {
-        // const data = {
-        //     products: addedItems,
-        //     totalPrice: getTotalPrice(addedItems),
-        //     queryId,
-        // }
-        fetch(sendTel)
-        // fetch('http://85.119.146.179:8000/web-data', {
+        const data = {
+            products: addedItems,
+            totalPrice: getTotalPrice(addedItems),
+            queryId,
+        }
+        fetch(sendTel)//, {
         //     method: 'POST',
         //     headers: {
         //         'Content-Type': 'application/json',
         //     },
         //     body: JSON.stringify(data)
         // })
-    }, [])
+    }, [addedItems])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -88,5 +88,5 @@ const ProductList = () => {
         </div>
     );
 };
-    
+
 export default ProductList;
