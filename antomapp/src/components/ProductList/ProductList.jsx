@@ -32,20 +32,23 @@ const ProductList = () => {
     const {tg, queryId} = useTelegram();
     const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text=clikeasdNETLIFY'
 
+        // fetch('http://188.247.115.178:30020/web-data')
+    
     const onSendData = useCallback(() => {
         const data = {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
-        fetch(sendTel)//, {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(data)
-        // })
+        fetch('http://188.247.115.178:30020/web-data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
     }, [addedItems])
+
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
