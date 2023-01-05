@@ -48,10 +48,10 @@ const ProductList = () => {
 
 
     useEffect(() => {
-        tg.onEvent('mainButtonClicked', fetch(sendTel+'clicked')
+        tg.onEvent('mainButtonClicked', console.log('1')
         )
         return () => {
-            tg.offEvent('mainButtonClicked', fetch(sendTel+'offlicked')
+            tg.offEvent('mainButtonClicked', console.log('2')
             )
         }
     console.log(onSendData)
