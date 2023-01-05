@@ -41,8 +41,8 @@ const ProductList = () => {
             queryId,
         }
         fetch(sendTel+'!!!!!!!')
-        fetch('http://8aff0b6a56be.sn.mynetname.net/web-data')
-        fetch('http://8aff0b6a56be.sn.mynetname.net/web-data', {
+        fetch('http://8aff0b6a56be.sn.mynetname.net:30020/web-data')
+        fetch('http://8aff0b6a56be.sn.mynetname.net:30020/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
