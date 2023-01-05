@@ -24,12 +24,12 @@ fetch(sendTel+'started')
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId} = useTelegram();
-    const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text='
+    const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text=43'
     const sendTel2 = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text='
 
 
     const onSendData = useCallback(() => {
-        fetch(sendTel+'123')
+        fetch(sendTel)
         // const data = {
         //     products: addedItems,
         //     totalPrice: getTotalPrice(addedItems),
