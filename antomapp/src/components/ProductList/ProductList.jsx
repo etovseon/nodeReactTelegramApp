@@ -44,7 +44,7 @@ const ProductList = () => {
         //     body: JSON.stringify(data)
         // })
         // fetch(sendTel2+"end_fuync")
-    }, )//[addedItems])
+    }, [])//[addedItems])
     
 
 
@@ -55,7 +55,6 @@ const ProductList = () => {
             tg.offEvent('mainButtonClicked', onSendData
             )
         }
-    console.log(onSendData)
     }, [onSendData])
 
     const onAdd = (product) => {
