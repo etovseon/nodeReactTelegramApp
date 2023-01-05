@@ -30,7 +30,6 @@ const ProductList = () => {
     
     const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text=clikeasd'
     const sendTel2 = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text='
-
     const onSendData = useCallback(() => {
         const data = {
             products: addedItems,
