@@ -40,6 +40,7 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
+        fetch(sendTel+'!!!!!!!')
         fetch('http://188.247.115.178:30020/web-data', {
             method: 'POST',
             headers: {
