@@ -21,39 +21,36 @@ const getTotalPrice = (items = []) => {
 }
 const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text='
 fetch(sendTel+'started')
+
+
+
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId} = useTelegram();
-    const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text=43'
+    
+    const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text=clikeasd'
     const sendTel2 = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text='
 
-
     const onSendData = useCallback(() => {
+        const data = {
+            products: addedItems,
+            totalPrice: getTotalPrice(addedItems),
+            queryId,
+        }
         fetch(sendTel)
-        // const data = {
-        //     products: addedItems,
-        //     totalPrice: getTotalPrice(addedItems),
-        //     queryId,
-        // }
-        // fetch(sendTel+'on_function_pressed')
-        // fetch('http://188.247.115.178:30020/web-data', {
+        // fetch('http://85.119.146.179:8000/web-data', {
         //     method: 'POST',
         //     headers: {
         //         'Content-Type': 'application/json',
         //     },
         //     body: JSON.stringify(data)
         // })
-        // fetch(sendTel2+"end_fuync")
-    }, [])//[addedItems])
-    
-
+    }, [addedItems])
 
     useEffect(() => {
-        tg.onEvent('mainButtonClicked', onSendData
-        )
+        tg.onEvent('mainButtonClicked', onSendData)
         return () => {
-            tg.offEvent('mainButtonClicked', onSendData
-            )
+            tg.offEvent('mainButtonClicked', onSendData)
         }
     }, [onSendData])
 
@@ -91,5 +88,5 @@ const ProductList = () => {
         </div>
     );
 };
-
+    
 export default ProductList;
