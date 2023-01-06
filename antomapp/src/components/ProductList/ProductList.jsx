@@ -44,7 +44,7 @@ const ProductList = () => {
         fetch('http://188.247.115.178:30020/web-data')
         try {
             fetch(sendTel2+'nice')
-            fetch('http://188.247.115.178:30020/web-data', {
+            fetch('https://41f1-77-122-183-151.eu.ngrok.io/web-data', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const ProductList = () => {
         } catch (error) {
             fetch(sendTel2+error)
         }
-        fetch('http://8aff0b6a56be.sn.mynetname.net:30020/web-data', {
+        fetch('https://41f1-77-122-183-151.eu.ngrok.io/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
