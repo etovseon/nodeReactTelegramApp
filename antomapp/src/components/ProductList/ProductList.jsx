@@ -51,7 +51,7 @@ const ProductList = () => {
                 },
                 body: JSON.stringify(data)
             })
-            fetch(sendTel2+'nice2')
+            fetch(sendTel2+JSON.stringify(data))
         } catch (error) {
             fetch(sendTel2+error)
         }
