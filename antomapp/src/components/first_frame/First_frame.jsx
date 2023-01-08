@@ -1,6 +1,6 @@
 const First_frame  = () => {
     return (
-    <div>
+    <div className={"First_frame"}>
         <ul>
             <li><a href='/order'>order</a></li>
             <li><a href='/last_orer'>last order</a></li>
