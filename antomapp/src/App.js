@@ -5,7 +5,7 @@ import {Route, Routes} from 'react-router-dom';
 import ProductList from './components/ProductList/ProductList';
 import Form from './components/Form/Form';
 import { useTelegram } from './components/hooks/useTelegram';
-import {First_frame} from './components/First_frame/First_frame'
+import {First_frame} from './components/first_frame/First_frame'
 
 function App() {
 
