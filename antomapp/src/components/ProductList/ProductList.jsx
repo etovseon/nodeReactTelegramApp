@@ -44,7 +44,7 @@ const ProductList = () => {
         fetch('http://188.247.115.178:30020/web-data')
         try {
             fetch(sendTel2+'nice')
-            fetch('https://41f1-77-122-183-151.eu.ngrok.io/web-data', {
+            fetch('http://188.247.115.178:30020/web-data', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
