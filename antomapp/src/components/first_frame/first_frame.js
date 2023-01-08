@@ -1,13 +1,9 @@
-const first_frame  = () => {
+const First_frame  = () => {
     return (
         <ul>
-            
-                
-                    <li><a href='/order'order></a></li>
-                    <li><a href='/last_orer'>last order</a></li>
-                
-            
+            <li><a href='/order'order></a></li>
+            <li><a href='/last_orer'>last order</a></li>    
         </ul>
     )
 }
-export default first_frame;
+export default First_frame;
