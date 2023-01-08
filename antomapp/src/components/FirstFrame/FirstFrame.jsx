@@ -1,6 +1,6 @@
-const First_frame  = () => {
+const FirstFrame  = () => {
     return (
-    <div className={"First_frame"}>
+    <div className={"FirstFrame"}>
         <ul>
             <li><a href='/order'>order</a></li>
             <li><a href='/last_orer'>last order</a></li>
@@ -10,4 +10,4 @@ const First_frame  = () => {
     </div>
     );
 }
-export default First_frame;
+export default FirstFrame;
