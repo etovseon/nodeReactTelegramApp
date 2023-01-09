@@ -6,8 +6,8 @@ import { useTelegram } from '../hooks/useTelegram';
 import {useCallback, useEffect} from "react";
 
 // const webAppUrl = 'https://8127-5-248-107-249.eu.ngrok.io';
-const sendTel2 = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text='
-fetch(sendTel2+'started')
+// const sendTel2 = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text='
+// fetch(sendTel2+'started')
 
 
 const products = [
@@ -30,39 +30,21 @@ const getTotalPrice = (items = []) => {
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId} = useTelegram();
-    const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text=clikeasdNETLIFY'
+    // const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text=clikeasdNETLIFY'
 
-        // fetch('http://188.247.115.178:30020/web-data')
-    
     const onSendData = useCallback(() => {
         const data = {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
-        fetch(sendTel+'!!!!!!!')
-        fetch('http://188.247.115.178:30020/web-data')
-        try {
-            fetch(sendTel2+'nice')
-            fetch('http://188.247.115.178:30020/web-data', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            })
-            fetch(sendTel2+JSON.stringify(data))
-        } catch (error) {
-            fetch(sendTel2+error)
-        }
-        fetch('https://41f1-77-122-183-151.eu.ngrok.io/web-data', {
+        fetch('http://188.247.115.178:30020/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)
         })
-        fetch(sendTel+'??????')
     }, [addedItems])
 
 
