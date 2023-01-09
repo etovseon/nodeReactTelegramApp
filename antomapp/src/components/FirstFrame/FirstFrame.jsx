@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 import Button from '../Button/Button';
+import './FirstFrame.css'
 
 
 // const goMenu = () => {
@@ -47,11 +48,17 @@ const FirstFrame  = () => {
         navigate(path);
       }       
     return (
-        <ul>
-            <Button color="primary" className="px-4" onClick={Menu}>Menu</Button>
-            <Button color="primary" className="px-4" onClick={Order}>Order</Button>
-            <Button color="primary" className="px-4" onClick={Auth}>Auth</Button>
-        </ul>
+        // <ul>
+        //     <Button color="primary" className="px-4" onClick={Menu}>Menu</Button>
+        //     <Button color="primary" className="px-4" onClick={Order}>Order</Button>
+        //     <Button color="primary" className="px-4" onClick={Auth}>Auth</Button>
+        // </ul>
+        <div class="vertical-menu">
+            <a href="#" class="active">Навигация</a>
+            <Button onClick={Menu}>Menu</Button>
+            <Button onClick={Order}>Order</Button>
+            <Button onClick={Auth}>Auth</Button>
+        </div>
     );
 }
 export default FirstFrame;
