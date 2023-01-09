@@ -26,17 +26,17 @@ const Form = () => {
 
     useEffect(() => {
         tg.MainButton.setParams({
-            text: 'Отправить данные'
+            text: 'Авторизация'
         })
     }, [])
 
     useEffect(() => {
-        if(!street || !country) {
+        if(!login || !password) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
         }
-    }, [country, street])
+    }, [login, password])
 
     const onChangelogin = (e) => {
         setLogin(e.target.value)
