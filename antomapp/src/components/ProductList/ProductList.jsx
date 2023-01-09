@@ -4,12 +4,17 @@ import ProductItem from "../ProductItem/ProductItem";
 // import {useTelegram} from "../../hooks/useTelegram";
 import { useTelegram } from '../hooks/useTelegram';
 import {useCallback, useEffect} from "react";
+import Articles from "../../ORM/models/articles"
 
 // const webAppUrl = 'https://8127-5-248-107-249.eu.ngrok.io';
 // const sendTel2 = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text='
 // fetch(sendTel2+'started')
 
-
+const articles = Articles.findAll({
+    where: {
+        group_id:2
+    }
+})
 const products = [
     {id: '1', title: 'Джинсы6', price: 5000, description: 'Синего цвета, прямые'},
     {id: '2', title: 'Куртка', price: 12000, description: 'Зеленого цвета, теплая'},
@@ -79,7 +84,8 @@ const ProductList = () => {
 
     return (
         <div className={'list'}>
-            {products.map(item => (
+            {articles.map(item => (
+            // {products.map(item => (
                 <ProductItem
                     product={item}
                     onAdd={onAdd}
