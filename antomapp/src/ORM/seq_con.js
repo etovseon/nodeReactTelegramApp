@@ -1,19 +1,19 @@
-var Sequelize = require("sequelize");
+const Sequelize = require("sequelize");
 
-var sequelize = new Sequelize(
-    "database",
-    process.env.USER,
-    process.env.PASSWORD,
+const sequelize = new Sequelize(
+    "kurwa",
+    "root",
+    "",
     {
-    host: "0.0.0.0",
+    // host: "0.0.0.0",
     dialect: "sqlite",
-    pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-    },
+    // pool: {
+    // max: 5,
+    // min: 0,
+    // idle: 10000
+    // },
     storage: "kurwa.db"
 }
 );
 
-module.exports = {sequelize,Sequelize};
+export default {sequelize,Sequelize};

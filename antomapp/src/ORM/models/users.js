@@ -1,4 +1,4 @@
-const {sequelize,Sequelize} = require("./seq_con")
+const {sequelize,Sequelize} = require("../seq_con")
 Users = sequelize.define("users", {
     login: {
       type: Sequelize.STRING

@@ -1,26 +1,15 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import { useTelegram } from "../hooks/useTelegram";
 import './Auth.css'
+// import {CheackAuth} from "./AuthJS"
 
-const Form = () => {
+const Auth = () => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     // const [subject, setSubject] = useState('physical');
     const {tg} = useTelegram();
     const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text='
-    const CheackAuth = () => {
-        const auth_user_or_not = Users.findAll({
-            attributes: ["login","password"],
-            where: {login:data?.login, password:data?.password},
-            raw:true
-        })
-        console.log(auth_user_or_not)
-                    
-        auth_user_or_not.then(function(res){
-            console.log(res)
-        fetch(sendTel+JSON.stringify(res))
-        })
-    }
+
     const onSendData = useCallback(() => {
         const data = {
             login,
@@ -28,18 +17,19 @@ const Form = () => {
             // subject
             
         }
+        // CheackAuth(data.login, data.password)
         // const CheackAuth = (cheackLogin,cheackPassword) => {
-            const auth_user_or_not = Users.findAll({
-                attributes: ["login","password"],
-                where: {login:data.login, password:data.password},
-                raw:true
-            })
-            console.log(auth_user_or_not)
+            // const auth_user_or_not = Users.findAll({
+            //     attributes: ["login","password"],
+            //     where: {login:data.login, password:data.password},
+            //     raw:true
+            // })
+            // console.log(auth_user_or_not)
                         
-            auth_user_or_not.then(function(res){
-                console.log(res)
-            fetch(sendTel+JSON.stringify(res))
-            })
+            // auth_user_or_not.then(function(res){
+            //     console.log(res)
+            // fetch(sendTel+JSON.stringify(res))
+            // })
     // }
         // CheackAuth(data.login,data.password)
 
@@ -104,4 +94,4 @@ const Form = () => {
     );
 };
 
-export default Form;
+export default Auth;

@@ -1,4 +1,4 @@
-const {sequelize,Sequelize} = require("./seq_con")
+// const {sequelize,Sequelize} = require("../seq_con").default
 Articles = sequelize.define("articles", {
     name: {
       type: Sequelize.STRING
