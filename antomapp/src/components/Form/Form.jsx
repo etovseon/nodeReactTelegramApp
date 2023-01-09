@@ -3,19 +3,19 @@ import { useTelegram } from "../hooks/useTelegram";
 import './Form.css'
 
 const Form = () => {
-    const [country, setCountry] = useState('');
-    const [street, setStreet] = useState('');
-    const [subject, setSubject] = useState('physical');
+    const [login, setLogin] = useState('');
+    const [password, setPassword] = useState('');
+    // const [subject, setSubject] = useState('physical');
     const {tg} = useTelegram();
 
     const onSendData = useCallback(() => {
         const data = {
-            country,
-            street,
-            subject
+            login,
+            password,
+            // subject
         }
         tg.sendData(JSON.stringify(data));
-    }, [country, street, subject])
+    }, [login, password, /*subject*/])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -38,17 +38,17 @@ const Form = () => {
         }
     }, [country, street])
 
-    const onChangeCountry = (e) => {
-        setCountry(e.target.value)
+    const onChangelogin = (e) => {
+        setLogin(e.target.value)
     }
 
-    const onChangeStreet = (e) => {
-        setStreet(e.target.value)
+    const onChangePassword = (e) => {
+        setPassword(e.target.value)
     }
 
-    const onChangeSubject = (e) => {
-        setSubject(e.target.value)
-    }
+    // const onChangeSubject = (e) => {
+    //     setSubject(e.target.value)
+    // }
 
     return (
         <div className={"form"}>
@@ -56,21 +56,21 @@ const Form = () => {
             <input
                 className={'input'}
                 type="text"
-                placeholder={'Страна'}
-                value={country}
-                onChange={onChangeCountry}
+                placeholder={'Логин'}
+                value={login}
+                onChange={onChangelogin}
             />
             <input
                 className={'input'}
                 type="text"
-                placeholder={'Улица'}
-                value={street}
-                onChange={onChangeStreet}
+                placeholder={'Пароль'}
+                value={password}
+                onChange={onChangePassword}
             />
-            <select value={subject} onChange={onChangeSubject} className={'select'}>
+            {/* <select value={subject} onChange={onChangeSubject} className={'select'}>
                 <option value={'physical'}>Физ. лицо</option>
                 <option value={'legal'}>Юр. лицо</option>
-            </select>
+            </select> */}
         </div>
     );
 };
