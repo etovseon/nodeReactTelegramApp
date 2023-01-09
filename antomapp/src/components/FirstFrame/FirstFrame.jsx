@@ -44,7 +44,7 @@ const FirstFrame  = () => {
       }  
     
     const Auth = () =>{ 
-        let path = `/form`; 
+        let path = `/auth`; 
         navigate(path);
       }       
     return (
