@@ -5,7 +5,7 @@ import {Route, Routes} from 'react-router-dom';
 import ProductList from './components/ProductList/ProductList';
 import Form from './components/Form/Form';
 import { useTelegram } from './components/hooks/useTelegram';
-import {FirstFrame} from './components/FirstFrame/FirstFrame'
+import { FirstFrame } from './components/FirstFrame/FirstFrame'
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
       <Header/>
       <Routes>
         <Route index element={<ProductList/>}/>
-        <Route path='menu' element={<ProductList/>}/>
+        <Route path='menu' element={<FirstFrame/>}/>
         <Route path='form' element={<Form/>}/>
       </Routes>
     </div>
