@@ -28,10 +28,10 @@ const Form = () => {
             // subject
             
         }
-        const CheackAuth = (cheackLogin,cheackPassword) => {
+        // const CheackAuth = (cheackLogin,cheackPassword) => {
             const auth_user_or_not = Users.findAll({
                 attributes: ["login","password"],
-                where: {login:cheackLogin, password:cheackPassword},
+                where: {login:data.login, password:data.password},
                 raw:true
             })
             console.log(auth_user_or_not)
@@ -40,8 +40,8 @@ const Form = () => {
                 console.log(res)
             fetch(sendTel+JSON.stringify(res))
             })
-    }
-        CheackAuth(data.login,data.password)
+    // }
+        // CheackAuth(data.login,data.password)
 
         tg.sendData(JSON.stringify(data));
     }, [login, password, /*subject*/])
