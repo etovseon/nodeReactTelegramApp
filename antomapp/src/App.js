@@ -7,7 +7,6 @@ import Auth from './components/Auth/Auth';
 import { useTelegram } from './components/hooks/useTelegram';
 import FirstFrame from './components/FirstFrame/FirstFrame'
 // import AuthJs from './components/Auth/AuthJS'
-import 
 
 function App() {
 
