@@ -3,13 +3,9 @@ import { useEffect } from 'react';
 import Header from './components/Header/Header';
 import {Route, Routes} from 'react-router-dom';
 import ProductList from './components/ProductList/ProductList';
-import Form from './components/Form/Form';
+import Auth from './components/Auth/Auth';
 import { useTelegram } from './components/hooks/useTelegram';
-// import { FirstFrame } from './components/FirstFrame/FirstFrame';
 import FirstFrame from './components/FirstFrame/FirstFrame'
-// import { GeneralFrame } from './components/FirstFrame/FirstFrame'
-// const menu = require('./components/FirstFrame/FirstFrame')
-
 
 function App() {
 
@@ -26,7 +22,8 @@ function App() {
       <Routes>
         <Route index element={<FirstFrame/>}/>
         <Route path='order' element={<ProductList/>}/>
-        <Route path='form' element={<Form/>}/>
+        <Route path='auth' element={<Auth/>}/>
+        <Route path='authData' element={<authData/>}/>
       </Routes>
     </div>
   );
